@@ -1,0 +1,35 @@
+{
+  "name": "@polyseal/types",
+  "version": "1.0.0",
+  "description": "Shared TypeScript types for POLySeal monorepo",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "dev": "tsc --watch"
+  },
+  "keywords": [
+    "typescript",
+    "types",
+    "polyseal",
+    "attestation",
+    "blockchain"
+  ],
+  "author": "POLySeal Team",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "viem": "^2.0.0"
+  }
+}

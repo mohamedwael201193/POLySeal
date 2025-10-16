@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Polygon neon dark theme - always dark mode */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 8% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 8% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Polygon purple primary */
+    --primary: 271 81% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 280 90% 70%;
+
+    /* Electric cyan accent */
+    --secondary: 187 85% 43%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 187 95% 60%;
+
+    /* Neon green success */
+    --success: 158 64% 52%;
+    --success-foreground: 0 0% 100%;
+
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 280 70% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 8% 15%;
+    --input: 240 8% 12%;
+    --ring: 271 81% 56%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-purple: linear-gradient(135deg, hsl(271 81% 56%), hsl(280 90% 70%));
+    --gradient-cyber: linear-gradient(135deg, hsl(271 81% 56%), hsl(187 85% 43%));
+    --gradient-mesh: radial-gradient(at 0% 0%, hsl(271 81% 56% / 0.3) 0px, transparent 50%),
+                     radial-gradient(at 100% 0%, hsl(187 85% 43% / 0.2) 0px, transparent 50%),
+                     radial-gradient(at 100% 100%, hsl(158 64% 52% / 0.2) 0px, transparent 50%),
+                     radial-gradient(at 0% 100%, hsl(271 81% 56% / 0.3) 0px, transparent 50%);
+
+    /* Shadows with neon glow */
+    --shadow-glow-purple: 0 0 30px hsl(271 81% 56% / 0.5);
+    --shadow-glow-cyan: 0 0 30px hsl(187 85% 43% / 0.5);
+    --shadow-card: 0 10px 40px hsl(240 10% 3.9% / 0.5);
+
+    /* Animation timing */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+  }
+
+  /* Animated gradient mesh background */
+  .gradient-mesh-bg {
+    position: fixed;
+    inset: 0;
+    background: var(--gradient-mesh);
+    animation: gradient-shift 15s ease infinite;
+    z-index: -1;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+
+  /* Glassmorphism utility */
+  .glass {
+    background: hsl(var(--card) / 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  /* Glow effects */
+  .glow-purple {
+    box-shadow: var(--shadow-glow-purple);
+  }
+
+  .glow-cyan {
+    box-shadow: var(--shadow-glow-cyan);
+  }
+
+  /* Text gradient utilities */
+  .text-gradient-purple {
+    background: var(--gradient-purple);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-cyber {
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

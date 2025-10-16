@@ -1,0 +1,46 @@
+{
+  "name": "@polyseal/sdk",
+  "version": "1.0.0",
+  "description": "TypeScript SDK for POLySeal AI inference escrow and attestation system",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "polyseal",
+    "ai",
+    "attestation",
+    "blockchain",
+    "ethereum",
+    "polygon",
+    "escrow",
+    "typescript"
+  ],
+  "author": "POLySeal Team",
+  "license": "MIT",
+  "dependencies": {
+    "viem": "^2.0.0",
+    "@ethereum-attestation-service/eas-sdk": "^2.5.0",
+    "ethers": "^6.8.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  }
+}

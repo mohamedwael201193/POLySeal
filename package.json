@@ -1,0 +1,47 @@
+{
+  "name": "polyseal",
+  "version": "1.0.0",
+  "description": "AI inference escrow and attestation system on Polygon Amoy testnet",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "services/*", 
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "dev": "npm run dev --workspaces",
+    "lint": "eslint . --ext .js,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.ts,.tsx --fix",
+    "clean": "npm run clean --workspaces",
+    "deploy:contracts": "npm run deploy --workspace=packages/contracts",
+    "register:schema": "npm run register-schema --workspace=scripts",
+    "start:server": "npm run start --workspace=services/server",
+    "start:web": "npm run dev --workspace=apps/web",
+    "build:web": "npm run build --workspace=apps/web"
+  },
+  "keywords": [
+    "ai",
+    "escrow",
+    "attestation",
+    "polygon",
+    "ethereum",
+    "blockchain",
+    "typescript"
+  ],
+  "author": "POLySeal Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

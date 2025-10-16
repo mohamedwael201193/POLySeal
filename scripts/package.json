@@ -1,0 +1,32 @@
+{
+  "name": "@polyseal/scripts",
+  "version": "1.0.0",
+  "description": "POLySeal deployment and utility scripts",
+  "private": true,
+  "dependencies": {
+    "@ethereum-attestation-service/eas-sdk": "^2.5.0",
+    "ethers": "^6.8.0",
+    "dotenv": "^16.3.0",
+    "commander": "^11.1.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.1"
+  },
+  "scripts": {
+    "register-schema": "ts-node registerSchema.ts",
+    "register-poly-schema": "ts-node registerPOLySchema.ts",
+    "get-schema-uid": "ts-node getSchemaUID.ts",
+    "test-schema": "ts-node testSchema.ts",
+    "direct-schema": "ts-node directSchema.ts",
+    "check-contracts": "ts-node checkContracts.ts",
+    "find-schema": "ts-node findSchema.ts",
+    "test-attestation": "ts-node testAttestation.ts",
+    "attest": "ts-node attest.ts",
+    "demo-attest": "ts-node attest.ts demo",
+    "deploy-all": "ts-node do-deploy.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  }
+}
