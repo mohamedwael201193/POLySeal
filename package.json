@@ -11,6 +11,7 @@
   "scripts": {
     "build": "npm run build --workspaces",
     "build:web": "npm run build --workspace=apps/web",
+    "vercel-build": "npm install && npm run build --workspace=packages/types && npm run build --workspace=packages/contracts && npm run build --workspace=packages/sdk && npm run build --workspace=apps/web",
     "test": "npm run test --workspaces",
     "dev": "npm run dev --workspaces",
     "lint": "eslint . --ext .js,.ts,.tsx",
