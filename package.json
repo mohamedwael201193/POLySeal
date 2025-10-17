@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "build": "npm run build --workspaces",
+    "build:web": "npm run build --workspace=apps/web",
     "test": "npm run test --workspaces",
     "dev": "npm run dev --workspaces",
     "lint": "eslint . --ext .js,.ts,.tsx",
@@ -18,8 +19,7 @@
     "deploy:contracts": "npm run deploy --workspace=packages/contracts",
     "register:schema": "npm run register-schema --workspace=scripts",
     "start:server": "npm run start --workspace=services/server",
-    "start:web": "npm run dev --workspace=apps/web",
-    "build:web": "npm run build --workspace=apps/web"
+    "start:web": "npm run dev --workspace=apps/web"
   },
   "keywords": [
     "ai",
